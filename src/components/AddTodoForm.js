@@ -1,25 +1,28 @@
-import React from 'react';
+import React from 'react'
 
-let AddTodoForm = ({onSubmit}) => {
-  let input;
+
+let AddTodoForm = ({ onSubmit }) => {
+  let input
 
   return (
     <div>
-      <form onSubmi={e=> {
-        e.preventDefault();
+      <form onSubmit={e => {
+        e.preventDefault()
         if (!input.value.trim()) {
-          return;
+          return
         }
-        onSubmit(input.value);
-        input.value = '';
+        onSubmit(input.value)
+        input.value = ''
       }}>
-        <input ref={node=> {
+        <input ref={node => {
           input = node
-        }}/>
-        <button type="submit">Add Todo</button>
+        }} />
+        <button type="submit">
+          Add Todo
+        </button>
       </form>
     </div>
   )
-};
+}
 
-export default AddTodoForm;
+export default AddTodoForm
